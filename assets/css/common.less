@@ -1,0 +1,125 @@
+/* 公共样式表 */
+header {
+    background-color:transparent;
+    position: sticky;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:10;
+
+    transition:all linear .4s;
+    .wrap {
+        margin: 0;
+        border: none;
+        border-radius: 0px;
+        background: #111;
+        .logo {
+            color: #fff;
+            font-family: OSBold;
+            text-transform: uppercase;
+        }
+        .nav {
+            a {
+                padding: 1em;
+                color: #fff;
+                text-transform: uppercase;
+                border-bottom: 3px solid transparent;
+                transition: all 0.3s linear;
+                &:hover {
+                    border-bottom: 3px solid #c3c3c3;
+                }
+            }
+        }
+        @media screen and (max-width:768px) {
+            & {
+                background: #111;
+                .nav {
+                    a {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+.footer {
+    padding: 3em 0;
+    background: #111;
+    .box {
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        .copy {
+            font-family: OSLight;
+            font-size: 1.2em;
+            color: #b2b2b2;
+            text-transform: uppercase;
+            font-weight: 900;
+            span {
+                font-family: OSBold;
+            }
+        }
+        .linklist {
+            display: flex;
+            justify-content: space-around;
+            width: 25%;
+            a {
+                border: 3px solid #b2b2b2;
+                border-radius: 50%;
+                transition: all 0.3s linear;
+                img {
+                    width: 100%;
+                }
+                &:hover {
+                    transform: translateY(-8px) scale(1.1);
+                    box-shadow: 0 0 10px 0 #b2b2b2;
+                }
+            }
+        }
+    }
+}
+#gotop {
+    position: fixed;
+    bottom: 90px;
+    right: 0%;
+    width: 80px;
+    cursor: pointer;
+    z-index: -99998;
+    opacity: 0;
+
+    transition: all linear .4s;
+
+    &:hover {
+        animation: rubberBand 1s;
+    }
+
+    @keyframes rubberBand {
+        from {
+          transform: scale3d(1, 1, 1);
+        }
+      
+        30% {
+          transform: scale3d(1.25, 0.75, 1);
+        }
+      
+        40% {
+          transform: scale3d(0.75, 1.25, 1);
+        }
+      
+        50% {
+          transform: scale3d(1.15, 0.85, 1);
+        }
+      
+        65% {
+          transform: scale3d(.95, 1.05, 1);
+        }
+      
+        75% {
+          transform: scale3d(1.05, .95, 1);
+        }
+      
+        to {
+          transform: scale3d(1, 1, 1);
+        }
+      }
+}
